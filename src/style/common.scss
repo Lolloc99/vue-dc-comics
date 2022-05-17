@@ -16,3 +16,18 @@ body {
     width: 70%;
     margin: auto;
 }
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.active {
+    color: #0282f9;
+    border-bottom: 3px solid #0282f9;
+}
