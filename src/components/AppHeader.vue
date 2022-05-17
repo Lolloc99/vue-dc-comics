@@ -6,7 +6,7 @@
       </div>
       <div>
         <ul>
-          <li v-for="(item, index) in HeaderLinks" :key="index">
+          <li v-for="(item, index) in headerLinks" :key="index">
             {{ item.text }}
           </li>
         </ul>
@@ -20,7 +20,7 @@ export default {
   name: "AppHeader",
   data: function () {
     return {
-      HeaderLinks: [
+      headerLinks: [
         {
           url: "#",
           text: "Characters",
@@ -101,5 +101,6 @@ li {
   margin: 0.7rem;
   border-bottom: 5px solid transparent;
   text-transform: uppercase;
+  color: black;
 }
 </style>
