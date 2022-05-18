@@ -1,8 +1,11 @@
 <template>
   <div id="app">
+    <!-- Header -->
     <AppHeader />
+    <!-- Main -->
     <AppMain />
     <AppBonus />
+    <!-- Footer -->
     <AppFooter />
     <AppFooterBottom />
   </div>
