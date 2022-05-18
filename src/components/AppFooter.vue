@@ -1,44 +1,49 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <!-- DC Comics + Shop -->
-      <div class="col">
-        <div>
-          <h3>DC COMICS</h3>
+      <!-- Container col sx -->
+      <div class="left-col">
+        <!-- DC Comics + Shop -->
+        <div class="col">
+          <div>
+            <h3>DC COMICS</h3>
+            <ul>
+              <li v-for="(item, index) in dcComicsLinks" :key="index">
+                {{ item.text }}
+              </li>
+            </ul>
+            <h3>SHOP</h3>
+            <ul>
+              <li v-for="(item, index) in shopLinks" :key="index">
+                {{ item.text }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DC -->
+        <div class="col">
+          <h3>DC</h3>
           <ul>
-            <li v-for="(item, index) in dcComicsLinks" :key="index">
+            <li v-for="(item, index) in dcLinks" :key="index">
               {{ item.text }}
             </li>
           </ul>
-          <h3>SHOP</h3>
+        </div>
+
+        <!-- Sites -->
+        <div class="col">
+          <h3>SITES</h3>
           <ul>
-            <li v-for="(item, index) in shopLinks" :key="index">
+            <li v-for="(item, index) in sitesLinks" :key="index">
               {{ item.text }}
             </li>
           </ul>
         </div>
       </div>
+      <!-- /Container col sx -->
 
-      <!-- DC -->
-      <div class="col">
-        <h3>DC</h3>
-        <ul>
-          <li v-for="(item, index) in dcLinks" :key="index">
-            {{ item.text }}
-          </li>
-        </ul>
-      </div>
-
-      <!-- Sites -->
-      <div class="col">
-        <h3>SITES</h3>
-        <ul>
-          <li v-for="(item, index) in sitesLinks" :key="index">
-            {{ item.text }}
-          </li>
-        </ul>
-      </div>
-
+      <!-- Img logo DC -->
       <div class="logoimg">
         <img src="../assets/img/dc-logo-bg.png" alt="dc-logo-bg" />
       </div>
@@ -79,17 +84,7 @@ export default {
         },
         {
           url: "#",
-          text: "Collectibles",
-          active: false,
-        },
-        {
-          url: "#",
           text: "Videos",
-          active: false,
-        },
-        {
-          url: "#",
-          text: "Fans",
           active: false,
         },
         {
@@ -225,18 +220,28 @@ li {
   font-weight: lighter;
 }
 
+.left-col {
+  display: flex;
+}
+
 .col {
   display: inline-block;
   padding-top: 1.5rem;
+  margin-right: 2rem;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-  height: 450px;
+  position: relative;
+  padding: 1.8rem 0;
 }
 
 .logoimg {
+  position: absolute;
+  right: 0;
+  bottom: -5rem;
   overflow: hidden;
+  z-index: 0;
 }
 </style>

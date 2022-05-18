@@ -27,7 +27,9 @@ export default {
 .footer-bottom {
   width: 100%;
   background-color: #303030;
-  padding: 2rem 0;
+  padding: 2.07rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-bottom-content {

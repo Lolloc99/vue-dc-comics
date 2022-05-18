@@ -49,17 +49,14 @@ export default {
 .bonus {
   width: 100%;
   background-color: #0282f9;
-
-  /* test */
-  height: 150px;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .bonus-content {
   display: flex;
   align-items: center;
-
-  /* test */
-  height: 150px;
 }
 
 .container {
@@ -78,8 +75,7 @@ li {
   align-items: center;
 
   img {
-    display: inline-block;
-    width: 50px;
+    height: 50px;
     margin-right: 1rem;
   }
 
