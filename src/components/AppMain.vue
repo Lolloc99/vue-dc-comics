@@ -1,24 +1,26 @@
 <template>
   <main class="main">
-    <div id="jumbotron"></div>
+    <div id="jumbotron">
+      <button class="btn-series">Current Series</button>
+    </div>
     <div class="main-content container">
-      <ul>
-        <li
-          v-for="(item, index) in comicsArray"
-          :key="index"
-          class="comic-card"
-        >
-          <img src="" alt="Thumb" />
-          <h3>"Series"</h3>
-        </li>
-      </ul>
+      <AppThumbs
+        v-for="(item, index) in comicsArray"
+        :key="index"
+        :ComicsObj="item"
+      />
+      <button class="btn-more">Load More</button>
     </div>
   </main>
 </template>
 
 <script>
+import AppThumbs from "./AppThumbs";
 export default {
   name: "AppMain",
+  components: {
+    AppThumbs,
+  },
   data: function () {
     return {
       comicsArray: [
@@ -120,6 +122,7 @@ export default {
   background-color: #1c1c1c;
 
   #jumbotron {
+    position: relative;
     height: 400px;
     background-image: url(../assets/img/jumbotron.jpg);
   }
@@ -127,23 +130,38 @@ export default {
 
 .main-content {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 3rem 0;
+  margin-top: 1rem;
+}
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+.btn-more {
+  padding: 0.7rem 3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #0282f9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-series {
+  position: absolute;
+  bottom: -2rem;
+  left: 16rem;
+  padding: 1rem 1.8rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #0282f9;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 h1 {
   color: white;
-}
-
-.comic-card {
-  width: calc(100% / 6);
-  color: white;
-  margin-bottom: 3rem;
 }
 </style>
